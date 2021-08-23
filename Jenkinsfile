@@ -22,7 +22,7 @@ pipeline {
                             steps{
                                 script{
                                     bat 'javac src/main/java/org/example/App.java'
-                                    bat 'java src/main/java/org/example/App'
+                                    bat 'java target/classes/org/example/App'
                                     }
                             }
                 }
