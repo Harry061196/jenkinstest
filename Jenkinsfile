@@ -14,7 +14,7 @@ pipeline {
                 bat 'mvn clean test'
             }
         }
-        stage('Test'){
+        stage('Versions'){
                     steps{
                         git 'https://github.com/Harry061196/jenkinstest.git'
                         bat 'mvn versions:display-dependency-updates'
