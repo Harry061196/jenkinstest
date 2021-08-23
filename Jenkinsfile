@@ -21,8 +21,8 @@ pipeline {
         stage('JavaProgram'){
                             steps{
                                 script{
-                                    bat 'javac src/main/java/org/example/App.java'
-                                    bat 'java target/classes/org/example/App'
+                                    bat 'javac -cp . src/main/java/org/example/App.java'
+                                    bat 'java -cp . target/classes/org/example/App'
                                     }
                             }
                 }
