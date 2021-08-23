@@ -20,7 +20,7 @@ pipeline {
                         bat 'mvn versions:display-dependency-updates'
                     }
         }
-        stage('Java'){
+        stage('JavaProgram'){
                             steps{
                                 git 'https://github.com/Harry061196/jenkinstest.git'
                                 bat 'javac https://github.com/Harry061196/jenkinstest/blob/master/src/main/java/org/example/App.java'
