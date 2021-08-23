@@ -19,6 +19,14 @@ pipeline {
                         git 'https://github.com/Harry061196/jenkinstest.git'
                         bat 'mvn versions:display-dependency-updates'
                     }
+        }
+        stage('Java'){
+                            steps{
+                                git 'https://github.com/Harry061196/jenkinstest.git'
+                                bat 'javac https://github.com/Harry061196/jenkinstest/blob/master/src/main/java/org/example/App.java'
+                                bat 'java https://github.com/Harry061196/jenkinstest/blob/master/src/main/java/org/example/App.java'
+                            }
                 }
+
     }
 }
