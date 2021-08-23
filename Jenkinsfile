@@ -23,8 +23,8 @@ pipeline {
         stage('JavaProgram'){
                             steps{
 //                                 git 'https://github.com/Harry061196/jenkinstest.git'
-                                sh script 'javac src/main/java/org/example/App.java'
-                                sh script 'java src/main/java/org/example/App'
+                                sh 'javac src/main/java/org/example/App.java'
+                                sh 'java src/main/java/org/example/App'
                             }
                 }
 
