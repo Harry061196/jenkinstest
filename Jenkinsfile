@@ -20,9 +20,10 @@ pipeline {
                             script: 'mvn versions:display-dependency-updates',
                             returnStdout: true
                         ).trim()
-                        if("${MAVEN_VERSIONS}".startsWith("The following dependencies")){
-
+                        if("${MAVEN_VERSIONS}".contains("newer versions")){
+                                FIRST_STRING = "${MAVEN_VERSIONS}".substring(0,MAVEN_VERSIONS.length()
                                 echo "Git committer email: ${MAVEN_VERSIONS}"
+                                echo "${FIRST_STRING}"
                         }
                         else{
                             echo "No Newer versions"
