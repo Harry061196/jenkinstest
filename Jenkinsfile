@@ -24,6 +24,8 @@ pipeline {
                                 FIRST_STRING = "${MAVEN_VERSIONS}".substring(MAVEN_VERSIONS.indexOf("The"),MAVEN_VERSIONS.indexOf("BUILD"))
                                 echo "Git committer email: ${MAVEN_VERSIONS}"
                                 echo "--------------------------${FIRST_STRING}"
+                                REPLACE_STRINGS = FIRST_STRING.replaceAll("[INFO]","")
+                                echo "${REPLACE_STRINGS}"
                         }
                         else{
                             echo "No Newer versions"
