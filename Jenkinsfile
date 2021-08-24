@@ -24,14 +24,5 @@ pipeline {
                     }
                     }
         }
-        stage('JavaProgram'){
-                            steps{
-                                script{
-                                    bat 'javac -cp . src/main/java/org/example/App.java'
-                                    bat 'java -classpath ../../ org.example.App'
-                                    }
-                            }
-                }
-
     }
 }
