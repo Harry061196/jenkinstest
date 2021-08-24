@@ -15,10 +15,13 @@ pipeline {
         }
         stage('Versions'){
                     steps{
-
-                            def version = bat(returnStatus: true, script: "mvn versions:display-dependency-updates")
-                            echo '----------------Newer versions Dependencies-------------------'
-
+                    script {
+                       GIT_COMMIT_EMAIL = bat (
+                            script: 'mvn versions:display-dependency-updates',
+                            returnStdout: true
+                        ).trim()
+                        echo "Git committer email: ${GIT_COMMIT_EMAIL}"
+                    }
                     }
         }
         stage('JavaProgram'){
