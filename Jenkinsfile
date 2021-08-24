@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Test') {
                     steps {
-                        echo '${env.MAVEN_VERSIONS}'
+                        echo "${env.MAVEN_VERSIONS}"
                     }
                 }
     }
