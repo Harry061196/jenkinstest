@@ -16,12 +16,12 @@ pipeline {
         stage('Versions'){
                     steps{
                     script {
-                       GIT_COMMIT_EMAIL = bat (
+                       MAVEN_VERSIONS = bat (
                             script: 'mvn versions:display-dependency-updates',
                             returnStdout: true
                         ).trim()
-                        if("${GIT_COMMIT_EMAIL}".contains("newer versions")){
-                                echo "Git committer email: ${GIT_COMMIT_EMAIL}"
+                        if("${MAVEN_VERSIONS}".contains("newer versions")){
+                                echo "Git committer email: ${MAVEN_VERSIONS}"
                             }
                          else{
                             echo "No Newer versions"
