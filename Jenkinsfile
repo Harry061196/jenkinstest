@@ -16,7 +16,7 @@ pipeline {
         stage('Versions'){
                     steps{
 
-                            sh(returnStdout: true, script: "mvn versions:display-dependency-updates")
+                            def version = bat(returnStatus: true, script: "mvn versions:display-dependency-updates")
                             echo '----------------Newer versions Dependencies-------------------'
 
                     }
