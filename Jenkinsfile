@@ -26,6 +26,8 @@ pipeline {
                                 echo "--------------------------${FIRST_STRING}"
                                 REPLACE_STRINGS = FIRST_STRING.replaceAll("[INFO]","")
                                 echo "${REPLACE_STRINGS}"
+                                REPLACE_BRACE = REPLACE_STRINGS.replaceAll("[]","")
+                                echo "${REPLACE_BRACE}"
                         }
                         else{
                             echo "No Newer versions"
