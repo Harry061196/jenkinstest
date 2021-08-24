@@ -14,11 +14,11 @@ pipeline {
                                 echo "Git committer email: ${MAVEN_VERSIONS}"
                                 echo "--------------------------${FIRST_STRING}"
                                 MAVEN_VERSIONS = MAVEN_VERSIONS.replaceAll("[INFO]","")
-                                echo "${REPLACE_STRINGS}"
+                                echo "${MAVEN_VERSIONS}"
                                 MAVEN_VERSIONS = MAVEN_VERSIONS.replaceAll("[\\[\\]]", "")
-                                echo "${REPLACE_BRACE}"
+                                echo "${MAVEN_VERSIONS}"
                                 MAVEN_VERSIONS = MAVEN_VERSIONS.replaceAll("-","")
-                                echo "${REPLACE_HYPHEN}"
+                                echo "${MAVEN_VERSIONS}"
                         }
                         else{
                             echo "No Newer versions"
