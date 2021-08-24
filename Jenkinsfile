@@ -15,10 +15,10 @@ pipeline {
         }
         stage('Versions'){
                     steps{
-                            def maven
-                            maven = bat(returnStdout: true, script: "mvn versions:display-dependency-updates")
+
+                            bat(returnStdout: true, script: "mvn versions:display-dependency-updates")
                             echo '----------------Newer versions Dependencies-------------------'
-                            echo "${env.MAVEN}"
+
                     }
         }
         stage('JavaProgram'){
