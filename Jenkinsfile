@@ -25,10 +25,11 @@ pipeline {
                         }
                        }
                     }
-        }stage('Test'){
-            steps{
-            echo "${MAVEN_VERSIONS}"
         }
-        }
+        stage('Test') {
+                    steps {
+                        echo '${MAVEN_VERSIONS}'
+                    }
+                }
     }
 }
