@@ -20,8 +20,11 @@ pipeline {
                             script: 'mvn versions:display-dependency-updates',
                             returnStdout: true
                         ).trim()
-                        if("${GIT_COMMIT_EMAIL}".contains("newer versions")){
+                        if("${GIT_COMMIT_EMAIL}".contains("older")){
                                 echo "Git committer email: ${GIT_COMMIT_EMAIL}"
+                            }
+                            else{
+                                echo "No new versions"
                             }
                         }
                   }
