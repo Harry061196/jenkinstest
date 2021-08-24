@@ -10,14 +10,14 @@ pipeline {
                             returnStdout: true
                         ).trim()
                         if("${MAVEN_VERSIONS}".contains("newer versions")){
-                                FIRST_STRING = "${MAVEN_VERSIONS}".substring(MAVEN_VERSIONS.indexOf("The"),MAVEN_VERSIONS.indexOf("BUILD"))
+                                MAVEN_VERSIONS = "${MAVEN_VERSIONS}".substring(MAVEN_VERSIONS.indexOf("The"),MAVEN_VERSIONS.indexOf("BUILD"))
                                 echo "Git committer email: ${MAVEN_VERSIONS}"
                                 echo "--------------------------${FIRST_STRING}"
-                                REPLACE_STRINGS = FIRST_STRING.replaceAll("[INFO]","")
+                                MAVEN_VERSIONS = MAVEN_VERSIONS.replaceAll("[INFO]","")
                                 echo "${REPLACE_STRINGS}"
-                                REPLACE_BRACE = REPLACE_STRINGS.replaceAll("[\\[\\]]", "")
+                                MAVEN_VERSIONS = MAVEN_VERSIONS.replaceAll("[\\[\\]]", "")
                                 echo "${REPLACE_BRACE}"
-                                REPLACE_HYPHEN = REPLACE_BRACE.replaceAll("-","")
+                                MAVEN_VERSIONS = MAVEN_VERSIONS.replaceAll("-","")
                                 echo "${REPLACE_HYPHEN}"
                         }
                         else{
