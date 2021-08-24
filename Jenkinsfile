@@ -17,7 +17,7 @@ pipeline {
                                 echo "${MAVEN_VERSIONS}"
                                 MAVEN_VERSIONS = MAVEN_VERSIONS.replaceAll("[\\[\\]]", "")
                                 echo "${MAVEN_VERSIONS}"
-                                MAVEN_VERSIONS = MAVEN_VERSIONS.replaceAll("-","")
+                                MAVEN_VERSIONS = MAVEN_VERSIONS.replaceAll("--","")
                                 echo "${MAVEN_VERSIONS}"
                         }
                         else{
