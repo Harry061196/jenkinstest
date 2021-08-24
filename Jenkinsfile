@@ -21,7 +21,7 @@ pipeline {
                             returnStdout: true
                         ).trim()
                         if("${MAVEN_VERSIONS}".contains("newer versions")){
-                                FIRST_STRING = "${MAVEN_VERSIONS}".substring(MAVEN_VERSIONS.indexOf("The"),MAVEN_VERSIONS.indexOf("-"))
+                                FIRST_STRING = "${MAVEN_VERSIONS}".substring(MAVEN_VERSIONS.indexOf("The"),MAVEN_VERSIONS.indexOf("BUILD"))
                                 echo "Git committer email: ${MAVEN_VERSIONS}"
                                 echo "--------------------------${FIRST_STRING}"
                         }
