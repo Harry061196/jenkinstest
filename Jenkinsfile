@@ -15,7 +15,9 @@ pipeline {
         }
         stage('Versions'){
                     steps{
-                        bat 'mvn versions:display-dependency-updates'
+                            env.MAVEN = bat(returnStdout: true, script: "mvn versions:display-dependency-updates")
+                            echo '----------------Newer versions Dependencies-------------------'
+                            echo "${env.MAVEN}"
                     }
         }
         stage('JavaProgram'){
