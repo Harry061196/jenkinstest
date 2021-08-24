@@ -2,17 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-//                 git 'https://github.com/Harry061196/jenkinstest.git'
-                bat 'mvn clean compile'
-            }
-        }
-        stage('Test'){
-            steps{
-                bat 'mvn clean test'
-            }
-        }
         stage('Versions'){
                     steps{
                     script {
@@ -28,6 +17,8 @@ pipeline {
                                 echo "${REPLACE_STRINGS}"
                                 REPLACE_BRACE = REPLACE_STRINGS.replaceAll("[\\[\\]]", "")
                                 echo "${REPLACE_BRACE}"
+                                REPLACE_HYPHEN = REPLACE_BRACE.replaceAll("-","")
+                                echo "${REPLACE_HYPHEN}"
                         }
                         else{
                             echo "No Newer versions"
